@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexão.cs" />
     <Compile Include="Leitores.cs" />
     <Compile Include="paginaCadVendedor.cs">
       <SubType>Form</SubType>
