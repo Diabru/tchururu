@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_login = new System.Windows.Forms.TextBox();
-            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_entrar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,20 +56,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             // 
-            // txt_login
+            // txtLogin
             // 
-            this.txt_login.Location = new System.Drawing.Point(12, 45);
-            this.txt_login.Name = "txt_login";
-            this.txt_login.Size = new System.Drawing.Size(157, 20);
-            this.txt_login.TabIndex = 0;
+            this.txtLogin.Location = new System.Drawing.Point(12, 45);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(157, 20);
+            this.txtLogin.TabIndex = 0;
             // 
-            // txt_senha
+            // txtSenha
             // 
-            this.txt_senha.Location = new System.Drawing.Point(12, 80);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '*';
-            this.txt_senha.Size = new System.Drawing.Size(157, 20);
-            this.txt_senha.TabIndex = 1;
+            this.txtSenha.Location = new System.Drawing.Point(12, 80);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(157, 20);
+            this.txtSenha.TabIndex = 1;
             // 
             // label2
             // 
@@ -166,8 +166,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_senha);
-            this.Controls.Add(this.txt_login);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_entrar);
             this.Controls.Add(this.button1);
@@ -192,8 +192,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_login;
-        private System.Windows.Forms.TextBox txt_senha;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btn_entrar;
         private System.Windows.Forms.Label label3;

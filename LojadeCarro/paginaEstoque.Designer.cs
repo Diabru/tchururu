@@ -35,6 +35,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estoqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvleitores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPesquisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -117,11 +119,26 @@
             // 
             // estoqueToolStripMenuItem1
             // 
+            this.estoqueToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estoqueToolStripMenuItem,
+            this.clientesToolStripMenuItem});
             this.estoqueToolStripMenuItem1.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estoqueToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Control;
             this.estoqueToolStripMenuItem1.Name = "estoqueToolStripMenuItem1";
-            this.estoqueToolStripMenuItem1.Size = new System.Drawing.Size(75, 20);
-            this.estoqueToolStripMenuItem1.Text = "Estoque";
+            this.estoqueToolStripMenuItem1.Size = new System.Drawing.Size(83, 20);
+            this.estoqueToolStripMenuItem1.Text = "Consulta";
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estoqueToolStripMenuItem.Text = "Estoque";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // paginaEstoque
             // 
@@ -160,5 +177,7 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnPesquisa;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
     }
 }
