@@ -31,7 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.carrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +72,7 @@
             this.menuStrip1.BackgroundImage = global::LojadeCarro.Properties.Resources.Sem_título_aaaaaaa;
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.estoqueToolStripMenuItem,
+            this.menuCadastro,
             this.estoqueToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -80,17 +80,18 @@
             this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // estoqueToolStripMenuItem
+            // menuCadastro
             // 
-            this.estoqueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.carrosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.vendedoresToolStripMenuItem});
-            this.estoqueToolStripMenuItem.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estoqueToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
-            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.estoqueToolStripMenuItem.Text = "Cadastro";
+            this.menuCadastro.Font = new System.Drawing.Font("SimSun", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCadastro.ForeColor = System.Drawing.SystemColors.Control;
+            this.menuCadastro.Name = "menuCadastro";
+            this.menuCadastro.Size = new System.Drawing.Size(83, 20);
+            this.menuCadastro.Text = "Cadastro";
+            this.menuCadastro.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
             // carrosToolStripMenuItem
             // 
@@ -156,11 +157,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem menuCadastro;
     }
 }

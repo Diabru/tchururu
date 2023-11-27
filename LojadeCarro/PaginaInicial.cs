@@ -62,5 +62,10 @@ namespace LojadeCarro
              */
             /// }
         }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
