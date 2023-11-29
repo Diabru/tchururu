@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace LojadeCarro
 {
-    internal class Conexão
+    internal class Conexao
     {
         public static SqlConnection conn;
         public static string conexao =

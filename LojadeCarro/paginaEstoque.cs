@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,88 +28,79 @@ namespace LojadeCarro
         {
             try
             {
-                // bryan dps tu arruma saporra. não to conectado com o banco 🥰💀🙄🤬🤓😜☺️🙃🤠😳 
+                Conexao.conectar();
+                string sql = "Select * from carr.Cliente";
+                SqlCommand cmd = new SqlCommand(sql, Conexao.conn);
+                //DataTable - Cópia da tabela para memória
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                dgvClientes.DataSource = dt;
 
-                ///conexao.conectar();
-                ///
-                ///string sql = "select * from carrCliente";
-                ///sqlcommand cmd = new sqlcommand(sql, conexao.conn);
-                ///
-                // datatable - copia a tabela pra memoria
-                /// data table dt = new datatable();
-                /// 
-                // carregar o datatable com dados da tabela
-                /// dt.load(cmd.executereader());
-                /// dgvleitores.datasource = dt;
-
-               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro:" + ex.Message);
+                MessageBox.Show("Erro: " + ex.Message);
             }
             finally
             {
-                ///conexao.fechar();
+                Conexao.fechar();
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                // bryan dps tu arruma saporra. não to conectado com o banco 🥰💀🙄🤬🤓😜☺️🙃🤠😳 
+                try
+                {
+                    Conexao.conectar();
+                    string sql = @"Select * from carr.Cliente
+                       where Clie_NM like '" + txtPesquisa.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(sql, Conexao.conn);
+                    //DataTable - Cópia da tabela para memória
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+                    dgvClientes.DataSource = dt;
 
-                ///conexao.conectar();
-                ///
-                ///string sql = "select * from carrCliente
-                /// where nome like '" + txtPesquisa + "%'";
-                ///sqlcommand cmd = new sqlcommand(sql, conexao.conn);
-                ///
-                // datatable - copia a tabela pra memoria
-                /// data table dt = new datatable();
-                /// 
-                // carregar o datatable com dados da tabela
-                /// dt.load(cmd.executereader());
-                /// dgvleitores.datasource = dt;
-
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro:" + ex.Message);
-            }
-            finally
-            {
-                ///conexao.fechar();
-            }
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ///datagridviewrow linha;
-            /// linha = dgvleitores.currentrow;
-            /// leitores.codigo = linha.cells["Clie_ID"].value.tostring();
-            /// leitores.codigo = linha.cells["Clie_NM"];
-            /// leitores.codigo = linha.cells["Clie_Tel"];
-            /// leitores.codigo = linha.cells["Clie_Email"];
-            /// leitores.codigo = linha.cells["Clie_CPF"];
-            /// leitores.codigo = linha.cells["Clie_CNPJ"];
-            /// leitores.codigo = linha.cells["Clie_RG"];
-            /// leitores.codigo = linha.cells["Clie_DataE"];
-            /// leitores.codigo = linha.cells["Clie_Nat"];
-            /// leitores.codigo = linha.cells["Clie_END"];
-            /// leitores.codigo = linha.cells["Clie_CEP"];
-            /// leitores.codigo = linha.cells["Clie_Cida"];
-            /// if (linha.cells["foto"].value.tostring() != "")
-            ///       leitores.foto = (byte[])linha.cells["Foto"].value;
-            /// else
-            ///     leitores.fote = null;
-            /// close();
+            DataGridViewRow linha;
+            linha = dgvClientes.CurrentRow;
+            Clientes.Clie_ID = linha.Cells["Codigo"].Value.ToString();
+            Clientes.Clie_NM = linha.Cells["Nome"].Value.ToString();
+            Clientes.Clie_Tel = linha.Cells["Telefone"].Value.ToString();
+            Clientes.Clie_CEP = linha.Cells["CEP"].Value.ToString();
+            Clientes.Clie_Estado = linha.Cells["Estado"].Value.ToString();
+            Clientes.Clie_Cida = linha.Cells["Cidade"].Value.ToString();
+            Clientes.Clie_Rua = linha.Cells["Rua"].Value.ToString();
+            Clientes.Clie_N = linha.Cells["Numero"].Value.ToString();
+            Clientes.Clie_Complemento = linha.Cells["Complemento"].Value.ToString();
+            Clientes.Clie_Bairro = linha.Cells["Bairro"].Value.ToString();
+            if (linha.Cells["Foto"].Value.ToString() != "")
+            {
+                Clientes.foto = (byte[])linha.Cells["Foto"].Value;
+            }
+            else
+            {
+                Clientes.foto = null;
+            }
+            Close();
         }
 
         private void dgvleitores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            paginaEstoque menu = new paginaEstoque();
+            menu.ShowDialog();
         }
     }   
 }
