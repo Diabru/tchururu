@@ -28,12 +28,12 @@ namespace LojadeCarro
             try
             {
 
-                Conexão.conectar();
+                Conexao.conectar();
 
                 string sql = @"SELECT* FROM carr.Login
                                WHERE USUARIO = @usuario
                                AND SENHA = @senha";
-                SqlCommand cmd = new SqlCommand(sql, Conexão.conn);
+                SqlCommand cmd = new SqlCommand(sql, Conexao.conn);
                 cmd.Parameters.AddWithValue("usuario", txtLogin.Text);
                 cmd.Parameters.AddWithValue("senha", txtSenha.Text);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -52,7 +52,7 @@ namespace LojadeCarro
                         txtSenha.Clear();
                         txtLogin.Focus();
                     }
-                    else if (dr["TIPO_USUARIO"].ToString() == "Usuario")
+                    else if (dr["TIPO_USUARIO"].ToString() == "Usuário")
                     {
                         Pagina_Inicial menu = new Pagina_Inicial();
                         Visible = false;
@@ -67,7 +67,7 @@ namespace LojadeCarro
                     {
                         MessageBox.Show("Usuário e/ou senha inválidos!");
                     }
-                    Conexão.fechar();
+                    Conexao.fechar();
                 }
 
             }
@@ -77,6 +77,9 @@ namespace LojadeCarro
             }
         }
 
-
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
   }

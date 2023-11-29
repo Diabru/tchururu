@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LojadeCarro
 {
-    internal class Leitores
+    internal class Clientes
     {
         public static string Clie_ID = "";
         public static string Clie_NM;
@@ -20,7 +20,12 @@ namespace LojadeCarro
         public static string Clie_DataN;
         public static string Clie_END;
         public static string Clie_CEP;
+        public static string Clie_Bairro;
+        public static string Clie_N;
+        public static string Clie_Estado;
         public static string Clie_Cida;
+        public static string Clie_Complemento;
+        public static string Clie_Rua;
         public static byte[] foto;
     }
 }

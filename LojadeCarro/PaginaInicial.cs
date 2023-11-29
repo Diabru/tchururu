@@ -67,5 +67,28 @@ namespace LojadeCarro
         {
 
         }
+
+        private void carrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            paginaCadVendedor menu = new paginaCadVendedor();
+            menu.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaginaCadastroClie menu = new PaginaCadastroClie();
+            menu.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

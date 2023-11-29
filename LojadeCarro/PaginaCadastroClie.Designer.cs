@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.txtDataN = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.mskCEP = new System.Windows.Forms.MaskedTextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -54,7 +56,6 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtComp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.erpPreencherCampos = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Deletar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Alterar)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPreencherCampos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -258,6 +261,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.mskCEP);
             this.groupBox2.Controls.Add(this.txtNum);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.cmbEstado);
@@ -268,7 +272,6 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtComp);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtRua);
             this.groupBox2.Controls.Add(this.label17);
@@ -279,6 +282,20 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço do Cliente";
+            // 
+            // mskCEP
+            // 
+            this.mskCEP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.mskCEP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mskCEP.Font = new System.Drawing.Font("SimSun", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCEP.ForeColor = System.Drawing.SystemColors.Control;
+            this.mskCEP.Location = new System.Drawing.Point(43, 47);
+            this.mskCEP.Mask = "00000-000";
+            this.mskCEP.Name = "mskCEP";
+            this.mskCEP.Size = new System.Drawing.Size(62, 20);
+            this.mskCEP.TabIndex = 36;
+            this.mskCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCEP_MaskInputRejected);
+            this.mskCEP.Leave += new System.EventHandler(this.maskCEP_Leave);
             // 
             // txtNum
             // 
@@ -393,17 +410,6 @@
             this.label10.Text = "Complemento:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // txtCEP
-            // 
-            this.txtCEP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtCEP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCEP.Font = new System.Drawing.Font("SimSun", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCEP.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtCEP.Location = new System.Drawing.Point(43, 47);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(120, 20);
-            this.txtCEP.TabIndex = 25;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -484,6 +490,7 @@
             this.label13.Size = new System.Drawing.Size(63, 13);
             this.label13.TabIndex = 33;
             this.label13.Text = "Alterar";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -542,6 +549,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 38;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnTirarFoto
             // 
@@ -633,6 +641,10 @@
             this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             // 
+            // erpPreencherCampos
+            // 
+            this.erpPreencherCampos.ContainerControl = this;
+            // 
             // PaginaCadastroClie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -684,6 +696,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Alterar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPreencherCampos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,7 +726,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtComp;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label label17;
@@ -739,5 +751,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ErrorProvider erpPreencherCampos;
+        private System.Windows.Forms.MaskedTextBox mskCEP;
     }
 }
